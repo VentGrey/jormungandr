@@ -29,3 +29,29 @@ impl Direction {
     }
 }
 
+// Delimiter
+struct Block {
+    x: i32,
+    y: i32,
+}
+
+// Our player
+pub struct Snake {
+    direction: Direction,
+    body: LinkedList<Block>,
+    tail: Option<Block>,
+}
+
+// Methods for our snake
+impl Snake {
+    pub fn new(x: i32, y: i32) -> Snake {
+        let mut body: LinkedList<Block> = LinkedList::new();
+
+        body.push_back(Block {
+            x: x + 2,
+            y,
+        });
+
+
+    }
+}
