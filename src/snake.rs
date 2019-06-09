@@ -52,6 +52,20 @@ impl Snake {
             y,
         });
 
+        body.push_back(Block {
+            x: x + 1,
+            y,
+        });
 
+        body.push_back(Block {
+            x,
+            y,
+        });
+
+        Snake {
+            direction: Direction::Right,
+            body,
+            tail: None,
+        }
     }
 }
