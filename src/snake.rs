@@ -79,4 +79,11 @@ impl Snake {
         let head_block = self.body.front().unwrap();
         (head_block.x, head_block.y)
     }
+
+    pub fn move_forward(&mut self, dir: Option<Direction>) {
+        match dir {
+            Some(d) => self.direction = d,
+            None => (),
+        }
+    }
 }
