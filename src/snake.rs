@@ -10,7 +10,7 @@ const SNAKE_COLOUR: Color = [0.00, 0.80, 0.00, 1.0];
 // Hora de los objetos
 
 // Enumerado dirección
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum Direction {
     Up,
     Down,
