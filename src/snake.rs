@@ -10,6 +10,7 @@ const SNAKE_COLOUR: Color = [0.00, 0.80, 0.00, 1.0];
 // Hora de los objetos
 
 // Enumerado dirección
+#[derive(Copy, Clone)]
 pub enum Direction {
     Up,
     Down,
@@ -30,6 +31,7 @@ impl Direction {
 }
 
 // Delimiter
+#[derive(Debug, Clone)]
 struct Block {
     x: i32,
     y: i32,
@@ -109,5 +111,9 @@ impl Snake {
         self.body.push_front(new_block);
         let removed_block = self.body.pop_back().unwrap();
         self.tail = Some(removed_block);
+    }
+
+    pub fn head_direction(&self) -> Direction {
+        self.direction
     }
 }
