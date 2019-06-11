@@ -8,3 +8,8 @@ use draw::{draw_block, draw_rectangle};
 
 
 const FOOD_COLOR: Color = [0.80, 0.00, 0.00, 1.0];
+const BORDER_COLOR: Color = [0.00, 0.00, 0.00, 1.0];
+const GAMEOVER_COLOR: Color = [0.90, 0.00, 0.00, 0.5];
+
+const MOVING_PERIOD: f64 = 0.1;
+const RESTART_TIME: f64 = 1.0;
