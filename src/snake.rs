@@ -7,9 +7,8 @@ use draw::draw_block;
 
 const SNAKE_COLOUR: Color = [0.00, 0.80, 0.00, 1.0];
 
-// Hora de los objetos
-
-// Enumerado dirección
+//OOP time :D
+// Enum direction
 #[derive(Copy, Clone, PartialEq)]
 pub enum Direction {
     Up,
@@ -18,7 +17,7 @@ pub enum Direction {
     Right,
 }
 
-// Métodos para dirección
+// Methods for directions
 impl Direction {
     pub fn opposite(&self) -> Direction {
         match *self {
@@ -115,5 +114,23 @@ impl Snake {
 
     pub fn head_direction(&self) -> Direction {
         self.direction
+    }
+
+    pub fn next_head(&self, dir: Option<Direction>) -> (i32, i32) {
+        let (head_x, head_y): (i32, i32) = self.head_position();
+
+        let mut moving_dir = self.direction;
+
+        match dir {
+            Some(d) => moving_dir = d,
+            None => {}
+        }
+
+        match moving_dir {
+            Direction::Up => (head_x, head_y - 1),
+            Direction::Down => (head_x, head_y + 1),
+            Direction::Left => (head_x - 1, head_y),
+            Direction::Right => (head_x + 1, head_y),
+        }
     }
 }
