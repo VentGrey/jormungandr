@@ -8,4 +8,4 @@ edition = "2018"
 
 [dependencies]
 rand = "0.7.3"
-piston_window = "0.107.0"
+piston_window = "0.117.0"
